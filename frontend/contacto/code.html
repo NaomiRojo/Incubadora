@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Geseven</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style> body { font-family: 'Poppins', sans-serif; } </style>
+</head>
+<body class="bg-[#F7F2E7] text-[#1f2937]">
+  <header class="bg-white/80 backdrop-blur shadow-sm sticky top-0 z-40">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a class="text-2xl font-bold text-[#D4AF37]" href="../untitled_screen/code.html">Geseven</a>
+      <div class="hidden md:flex items-center space-x-6">
+        <a class="hover:text-[#D4AF37] transition-colors" href="../untitled_screen/code.html">Inicio</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../publicar_un_lugar/code.html">Publicar lugar</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../sobre_nosotros/code.html">Sobre nosotros</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../contacto/code.html">Contacto</a>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a class="hidden md:inline-flex items-center gap-2 rounded-md border border-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-colors" href="../mis_reservas/code.html">Mis reservas</a>
+        <a class="inline-flex items-center gap-2 rounded-md bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-white hover:bg-[#b9952a] transition-colors" href="../login/register/code.html">Acceder</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto px-6 py-16 space-y-12">
+    <section class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+      <div class="bg-white shadow-xl rounded-3xl p-8 lg:p-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#003366] mb-3">Contanos sobre tu evento</h1>
+        <p class="text-gray-600 mb-8">Completá el formulario y nuestro equipo te responderá dentro de las próximas 24 horas.</p>
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-name">Nombre completo</label>
+            <input id="contact-name" type="text" required class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]" placeholder="Ej. Valentina Garcia" />
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-email">Email</label>
+              <input id="contact-email" type="email" required class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]" placeholder="tucorreo@email.com" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-phone">Telefono</label>
+              <input id="contact-phone" type="tel" class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]" placeholder="Ej. +54 9 11 5555 4444" />
+            </div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-type">Tipo de evento</label>
+              <select id="contact-type" class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]">
+                <option>Boda</option>
+                <option>Cumpleanos</option>
+                <option>Evento corporativo</option>
+                <option>Reunion familiar</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-date">Fecha estimada</label>
+              <input id="contact-date" type="date" class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1" for="contact-message">Detalles adicionales</label>
+            <textarea id="contact-message" rows="4" class="w-full rounded-lg border border-gray-200 bg-[#F7F2E7] px-4 py-3 focus:border-[#D4AF37] focus:ring-[#D4AF37]" placeholder="Contanos cantidad de invitados, estilo de evento o requisitos especiales"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center gap-2 rounded-md bg-[#D4AF37] px-5 py-3 font-semibold text-white hover:bg-[#b9952a] transition-colors">
+            <span class="material-icons text-base">send</span>
+            Enviar mensaje
+          </button>
+          <p id="contact-confirmation" class="hidden text-sm text-green-700 bg-green-100 border border-green-200 rounded-lg px-4 py-3"></p>
+        </form>
+      </div>
+      <aside class="space-y-6">
+        <div class="bg-[#003366] text-white rounded-3xl p-8">
+          <h2 class="text-2xl font-semibold mb-3">Horarios de atencion</h2>
+          <p class="text-white/80">Lunes a viernes de 9 a 18 hs (ART). Emergencias: +54 9 11 4444 5555.</p>
+          <hr class="my-5 border-white/10" />
+          <h3 class="text-lg font-semibold">¿Preferis hablar ahora?</h3>
+          <a class="inline-flex mt-3 items-center gap-2 rounded-md bg-[#D4AF37] px-4 py-2 font-semibold text-[#003366] hover:bg-[#f3ce62] transition-colors" href="tel:+5491144445555">Llamar a soporte</a>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md p-6">
+          <h3 class="text-xl font-semibold text-[#003366] mb-4">Preguntas frecuentes</h3>
+          <details class="group border-b border-gray-200 py-3" open>
+            <summary class="flex items-center justify-between cursor-pointer text-gray-700 font-medium">¿Cuanto tarda la aprobacion? <span class="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span></summary>
+            <p class="mt-2 text-sm text-gray-600">Menos de 24 horas para espacios nuevos y en promedio 2 horas para solicitudes de reserva.</p>
+          </details>
+          <details class="group border-b border-gray-200 py-3">
+            <summary class="flex items-center justify-between cursor-pointer text-gray-700 font-medium">¿Puedo visitar el espacio? <span class="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span></summary>
+            <p class="mt-2 text-sm text-gray-600">Claro, coordinamos visitas presenciales o virtuales con el anfitrion antes de confirmar la reserva.</p>
+          </details>
+          <details class="group py-3">
+            <summary class="flex items-center justify-between cursor-pointer text-gray-700 font-medium">¿Ofrecen proveedores adicionales? <span class="text-[#D4AF37] group-open:rotate-180 transition-transform">▼</span></summary>
+            <p class="mt-2 text-sm text-gray-600">Contamos con una red de catering, ambientacion, fotografia y entretenimiento que se activa bajo demanda.</p>
+          </details>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer class="bg-[#003366] text-white mt-16">
+    <div class="container mx-auto px-6 py-10 grid gap-8 md:grid-cols-4">
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Geseven</h3>
+        <p class="text-white/70">Tu plataforma de confianza para encontrar y gestionar espacios para todo tipo de eventos.</p>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Navegacion</h4>
+        <ul class="space-y-2 text-white/80">
+          <li><a class="hover:text-[#D4AF37]" href="../untitled_screen/code.html">Inicio</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../publicar_un_lugar/code.html">Publicar lugar</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../mis_reservas/code.html">Mis reservas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Soporte</h4>
+        <ul class="space-y-2 text-white/80">
+          <li><a class="hover:text-[#D4AF37]" href="../ayuda/code.html">Centro de ayuda</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../terminos/code.html">Terminos</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../privacidad/code.html">Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Contacto</h4>
+        <p class="text-white/80">Escribinos a <a class="underline hover:text-[#D4AF37]" href="mailto:hola@geseven.com">hola@geseven.com</a></p>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-center text-sm text-white/60">
+      © 2024 Geseven. Todos los derechos reservados.
+    </div>
+  </footer>
+  <script>
+    const contactForm = document.getElementById('contact-form');
+    const confirmation = document.getElementById('contact-confirmation');
+    contactForm?.addEventListener('submit', event => {
+      event.preventDefault();
+      confirmation.textContent = 'Mensaje enviado. Nos pondremos en contacto muy pronto.';
+      confirmation.classList.remove('hidden');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

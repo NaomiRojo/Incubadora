@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nosotros - Geseven</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 1.25rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.6) 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#F7F2E7] text-[#1f2937]">
+  <header class="bg-white/80 backdrop-blur shadow-sm sticky top-0 z-40">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a class="text-2xl font-bold text-[#D4AF37]" href="../untitled_screen/code.html">Geseven</a>
+      <div class="hidden md:flex items-center space-x-6">
+        <a class="hover:text-[#D4AF37] transition-colors" href="../untitled_screen/code.html">Inicio</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../publicar_un_lugar/code.html">Publicar lugar</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../sobre_nosotros/code.html">Sobre nosotros</a>
+        <a class="hover:text-[#D4AF37] transition-colors" href="../contacto/code.html">Contacto</a>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a class="hidden md:inline-flex items-center gap-2 rounded-md border border-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-colors" href="../mis_reservas/code.html">Mis reservas</a>
+        <a class="inline-flex items-center gap-2 rounded-md bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-white hover:bg-[#b9952a] transition-colors" href="../login/register/code.html">Acceder</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto px-6 py-16 space-y-16">
+    <section class="grid gap-10 md:grid-cols-[1.2fr_1fr] items-center">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] text-[#D4AF37] mb-4">Nuestra historia</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-[#003366] mb-6">Conectamos ideas con espacios inolvidables</h1>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Geseven nace de la necesidad de simplificar la busqueda y gestion de lugares para eventos. Somos un equipo de
+          planners, anfitriones y amantes de los encuentros sociales que decidio centralizar toda la experiencia en una sola plataforma.
+        </p>
+      </div>
+      <div class="relative">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#D4AF37]/30 via-transparent to-[#003366]/20 blur-2xl"></div>
+        <img class="relative rounded-3xl shadow-xl" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Equipo de Geseven colaborando" />
+      </div>
+    </section>
+    <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+      <h2 class="text-3xl font-semibold text-[#003366] mb-8">Nuestra evolucion</h2>
+      <div class="relative timeline pl-10 space-y-8">
+        <div class="relative">
+          <div class="absolute -left-5 top-1.5 size-3 rounded-full bg-[#D4AF37]"></div>
+          <h3 class="text-xl font-semibold text-[#003366]">2019 - Primer evento gestionado</h3>
+          <p class="text-gray-600">Organizamos la boda de nuestros primeros clientes y entendimos cuan complejo era coordinar proveedores y espacios.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-5 top-1.5 size-3 rounded-full bg-[#D4AF37]"></div>
+          <h3 class="text-xl font-semibold text-[#003366]">2021 - Llega la comunidad</h3>
+          <p class="text-gray-600">Mas de 200 anfitriones se sumaron a la plataforma compartiendo sus casas de campo, salones y terrazas.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-5 top-1.5 size-3 rounded-full bg-[#D4AF37]"></div>
+          <h3 class="text-xl font-semibold text-[#003366]">2024 - Experiencias hibridas</h3>
+          <p class="text-gray-600">Integramos herramientas de gestion, facturacion y analitica para que cada evento sea medible y escalable.</p>
+        </div>
+      </div>
+    </section>
+    <section class="grid gap-8 md:grid-cols-3">
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-[#003366] mb-2">Transparencia</h3>
+        <p class="text-gray-600">Informacion clara sobre disponibilidad, politicas y tarifas para que anfitriones y organizadores decidan sin sorpresas.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-[#003366] mb-2">Acompanamiento</h3>
+        <p class="text-gray-600">Nuestro equipo de customer success sigue cada evento y ofrece soporte personalizado antes, durante y despues.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-[#003366] mb-2">Tecnologia util</h3>
+        <p class="text-gray-600">Dashboards, recordatorios y automatizaciones que resuelven tareas repetitivas para dedicar tiempo a la creatividad.</p>
+      </div>
+    </section>
+    <section class="bg-[#003366] text-white rounded-3xl p-10 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1">
+        <h2 class="text-3xl font-semibold mb-3">Quieres sumar tu espacio?</h2>
+        <p class="text-white/80">Publica en minutos y recibe solicitudes verificadas. Nuestro equipo te ayudara a optimizar tu ficha para destacar.</p>
+      </div>
+      <a class="inline-flex items-center justify-center rounded-md bg-[#D4AF37] px-6 py-3 font-semibold text-[#003366] hover:bg-[#f3ce62] transition-colors" href="../publicar_un_lugar/code.html">Publicar un lugar</a>
+    </section>
+  </main>
+  <footer class="bg-[#003366] text-white mt-16">
+    <div class="container mx-auto px-6 py-10 grid gap-8 md:grid-cols-4">
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Geseven</h3>
+        <p class="text-white/70">Tu plataforma de confianza para encontrar y gestionar espacios para todo tipo de eventos.</p>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Navegacion</h4>
+        <ul class="space-y-2 text-white/80">
+          <li><a class="hover:text-[#D4AF37]" href="../untitled_screen/code.html">Inicio</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../publicar_un_lugar/code.html">Publicar lugar</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../mis_reservas/code.html">Mis reservas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Soporte</h4>
+        <ul class="space-y-2 text-white/80">
+          <li><a class="hover:text-[#D4AF37]" href="../ayuda/code.html">Centro de ayuda</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../terminos/code.html">Terminos</a></li>
+          <li><a class="hover:text-[#D4AF37]" href="../privacidad/code.html">Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Contacto</h4>
+        <p class="text-white/80">Escribenos a <a class="underline hover:text-[#D4AF37]" href="mailto:hola@geseven.com">hola@geseven.com</a></p>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-center text-sm text-white/60">
+      © 2024 Geseven. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Geseven · Mi perfil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#D4AF37",
+                    secondary: "#003366",
+                    accent: "#F97316",
+                    'background-light': "#F7F2E7",
+                    'background-dark': "#001F3F",
+                    'text-light': "#1f2937",
+                    'text-dark': "#f3f4f6",
+                },
+                fontFamily: {
+                    display: ["Poppins", "sans-serif"],
+                },
+                borderRadius: {
+                    DEFAULT: "0.75rem",
+                },
+                boxShadow: {
+                    glow: "0 20px 45px rgba(0, 0, 0, 0.12)",
+                },
+            },
+        },
+    };
+</script>
+<style>
+    .material-icons {
+        font-size: inherit;
+        line-height: 1;
+    }
+</style>
+</head>
+<body class="bg-background-light font-display text-text-light">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-40 border-b border-primary/10 bg-white/90 backdrop-blur">
+<nav class="container mx-auto flex items-center justify-between gap-4 px-6 py-4">
+<a href="../untitled_screen/code.html#inicio" class="flex items-center gap-2 text-2xl font-bold text-primary">
+<span class="material-icons text-3xl" aria-hidden="true">celebration</span>
+<span>Geseven</span>
+</a>
+<div class="flex items-center gap-3 md:hidden">
+<a href="../publicar_un_lugar/code.html" class="rounded-md border border-primary/70 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary">Publicar</a>
+<button type="button" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex items-center justify-center rounded-md border border-primary/60 p-2 text-secondary transition hover:bg-primary/10">
+<span class="material-icons text-xl" aria-hidden="true">menu</span>
+<span class="sr-only">Abrir navegación</span>
+</button>
+</div>
+<div class="hidden items-center gap-8 md:flex">
+<ul class="flex items-center gap-6 text-sm font-medium text-secondary/80">
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a></li>
+<li><a class="transition-colors hover:text-primary" href="../publicar_un_lugar/code.html">Publicar un lugar</a></li>
+</ul>
+<a href="../contacto/code.html" class="rounded-md border border-primary/60 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-primary hover:text-primary">Soporte</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden border-t border-primary/10 bg-white/95 px-6 py-4 text-sm font-medium text-secondary shadow-sm md:hidden">
+<nav class="flex flex-col gap-3">
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a>
+<a class="transition-colors hover:text-primary" href="../publicar_un_lugar/code.html">Publicar un lugar</a>
+<a class="rounded-md border border-primary/60 px-4 py-2 text-center text-secondary transition hover:border-primary hover:text-primary" href="../contacto/code.html">Contactar soporte</a>
+<div class="mt-2 border-t border-primary/10 pt-3">
+<a class="block py-2 transition-colors hover:text-primary" href="../mis_reservas/code.html">Mis reservas</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../lugares_publicados/code.html">Mis lugares</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../historial_de_facturacion/code.html">Facturación</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../login/register/code.html">Cerrar sesión</a>
+</div>
+</nav>
+</div>
+</header>
+<main class="container mx-auto flex-1 px-6 py-12">
+<section class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+<div class="rounded-3xl border border-primary/10 bg-white/95 p-8 shadow-glow">
+<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+<div class="flex items-center gap-5">
+<div class="h-20 w-20 rounded-3xl border-4 border-primary/40 bg-gradient-to-br from-primary/70 to-secondary/80 text-center text-3xl font-bold text-white shadow-lg shadow-black/15">LC</div>
+<div>
+<p class="text-sm uppercase tracking-[0.3em] text-secondary/50">Cuenta verificada</p>
+<h1 class="text-3xl font-semibold text-secondary">Lucía Cabrera</h1>
+<p class="text-sm text-secondary/70">Productora de eventos | Buenos Aires, AR</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<a href="../publicar_un_lugar/code.html" class="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary/90">
+<span class="material-icons text-base" aria-hidden="true">add_business</span>
+Publicar nuevo lugar
+</a>
+<a href="../perfil_usuario/editar_perfil.html"
+   class="inline-flex items-center gap-2 rounded-md border border-secondary/40 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+  <span class="material-icons text-base" aria-hidden="true">edit</span>
+  Editar perfil
+</a>
+</div>
+</div>
+<div class="grid gap-5 md:grid-cols-3">
+<div class="rounded-2xl border border-primary/10 bg-white px-4 py-5 text-center shadow-sm">
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Reservas activas</p>
+<p class="mt-2 text-3xl font-semibold text-secondary">4</p>
+</div>
+<div class="rounded-2xl border border-primary/10 bg-white px-4 py-5 text-center shadow-sm">
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Valoraciones</p>
+<p class="mt-2 text-3xl font-semibold text-secondary">4.8</p>
+</div>
+<div class="rounded-2xl border border-primary/10 bg-white px-4 py-5 text-center shadow-sm">
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Ingresos del mes</p>
+<p class="mt-2 text-3xl font-semibold text-secondary">$3.250</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="rounded-3xl border border-primary/15 bg-white p-6 shadow-sm">
+<div class="flex items-center justify-between gap-3">
+<h2 class="text-lg font-semibold text-secondary">Preferencias de notificación</h2>
+<a class="text-sm font-semibold text-secondary transition hover:text-primary" href="../contacto/code.html">Modificar</a>
+</div>
+<ul class="mt-4 space-y-3 text-sm text-secondary/80">
+<li class="flex items-center gap-3"><span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>Confirmaciones de reserva por correo y WhatsApp.</li>
+<li class="flex items-center gap-3"><span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>Alertas de pagos recibidos y pendientes.</li>
+<li class="flex items-center gap-3"><span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>Recomendaciones de demanda en fechas libres.</li>
+</ul>
+</div>
+<div class="rounded-3xl border border-primary/15 bg-white p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-secondary">Documentación &amp; verificación</h2>
+<ul class="mt-4 space-y-3 text-sm text-secondary/80">
+<li class="flex items-center justify-between gap-3">
+<span>Identidad validada con DNI</span>
+<span class="inline-flex items-center gap-1 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+<span class="material-icons text-sm" aria-hidden="true">verified</span> Vigente
+</span>
+</li>
+<li class="flex items-center justify-between gap-3">
+<span>Contrato de servicio Geseven</span>
+<a class="text-sm font-semibold text-secondary transition hover:text-primary" href="../historial_de_facturacion/code.html">Descargar</a>
+</li>
+<li class="flex items-center justify-between gap-3">
+<span>Póliza de responsabilidad civil</span>
+<button type="button" class="text-sm font-semibold text-secondary transition hover:text-primary">Adjuntar nuevo</button>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+<div class="space-y-6">
+<div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+<div class="flex items-center justify-between gap-4">
+<h2 class="text-lg font-semibold text-secondary">Próximas reservas</h2>
+<a href="../mis_reservas/code.html" class="text-sm font-semibold text-secondary transition hover:text-primary">Ver todo</a>
+</div>
+<div class="mt-5 space-y-5">
+<article class="flex flex-col gap-4 rounded-2xl border border-primary/10 bg-white/90 p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+<div>
+<p class="text-sm font-semibold text-secondary">Conferencia Innovación 2024</p>
+<p class="text-sm text-secondary/70">Centro de Convenciones · 18/09/2024 · 450 asistentes</p>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="inline-flex items-center gap-1 rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary">
+<span class="material-icons text-sm" aria-hidden="true">event_available</span>
+Confirmada
+</span>
+<button type="button" class="inline-flex items-center gap-1 rounded-md border border-secondary/40 px-3 py-1 font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-sm" aria-hidden="true">chat</span>
+Contactar cliente
+</button>
+</div>
+</article>
+<article class="flex flex-col gap-4 rounded-2xl border border-primary/10 bg-white/90 p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+<div>
+<p class="text-sm font-semibold text-secondary">Boda Julieta &amp; Andrés</p>
+<p class="text-sm text-secondary/70">Jardín Los Sauces · 05/10/2024 · 180 invitados</p>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="inline-flex items-center gap-1 rounded-full bg-accent/15 px-3 py-1 font-semibold text-accent">
+<span class="material-icons text-sm" aria-hidden="true">hourglass_top</span>
+Pendiente de pago
+</span>
+<a href="../historial_de_facturacion/code.html" class="inline-flex items-center gap-1 rounded-md border border-secondary/40 px-3 py-1 font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-sm" aria-hidden="true">receipt_long</span>
+Ver factura
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+<div class="flex items-center justify-between gap-4">
+<h2 class="text-lg font-semibold text-secondary">Lugares publicados</h2>
+<a href="../lugares_publicados/code.html" class="text-sm font-semibold text-secondary transition hover:text-primary">Gestionar</a>
+</div>
+<ul class="mt-5 space-y-4 text-sm text-secondary/80">
+<li class="flex items-start justify-between gap-4">
+<div>
+<p class="font-semibold text-secondary">Salón Imperial</p>
+<p class="text-secondary/70">Ocupación promedio: 85% · Última actualización hace 3 días</p>
+</div>
+<button type="button" class="inline-flex items-center gap-1 rounded-md border border-secondary/40 px-3 py-1 font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-sm" aria-hidden="true">auto_graph</span>
+Ver métricas
+</button>
+</li>
+<li class="flex items-start justify-between gap-4">
+<div>
+<p class="font-semibold text-secondary">Terraza del Sol</p>
+<p class="text-secondary/70">Ocupación promedio: 72% · Última actualización hace 6 días</p>
+</div>
+<button type="button" class="inline-flex items-center gap-1 rounded-md border border-secondary/40 px-3 py-1 font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-sm" aria-hidden="true">edit_calendar</span>
+Actualizar disponibilidad
+</button>
+</li>
+<li class="flex items-start justify-between gap-4">
+<div>
+<p class="font-semibold text-secondary">Espacio Creativo</p>
+<p class="text-secondary/70">Ocupación promedio: 66% · Última actualización hace 11 días</p>
+</div>
+<a href="../detalles_del_lugar/code.html" class="inline-flex items-center gap-1 rounded-md border border-secondary/40 px-3 py-1 font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-sm" aria-hidden="true">visibility</span>
+Ver ficha
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+<div class="flex items-center justify-between gap-4">
+<h2 class="text-lg font-semibold text-secondary">Resumen financiero</h2>
+<a href="../historial_de_facturacion/code.html" class="text-sm font-semibold text-secondary transition hover:text-primary">Ver historial</a>
+</div>
+<div class="mt-5 grid gap-4 md:grid-cols-2">
+<div class="rounded-2xl border border-primary/10 bg-white/90 p-4 shadow-sm">
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Ingresos confirmados</p>
+<p class="mt-2 text-2xl font-semibold text-secondary">$12.480</p>
+<p class="text-xs text-secondary/60">Últimos 30 días · +12% vs mes anterior</p>
+</div>
+<div class="rounded-2xl border border-primary/10 bg-white/90 p-4 shadow-sm">
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Pagos pendientes</p>
+<p class="mt-2 text-2xl font-semibold text-secondary">$2.150</p>
+<p class="text-xs text-secondary/60">3 reservas · Se liberan al finalizar el evento</p>
+</div>
+</div>
+</div>
+<div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-secondary">Checklist de visibilidad</h2>
+<ul class="mt-4 space-y-4 text-sm text-secondary/80">
+<li class="flex items-start gap-3">
+<span class="material-icons mt-0.5 text-base text-primary" aria-hidden="true">check_circle</span>
+<span>Fotos profesionales cargadas en todos los espacios.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons mt-0.5 text-base text-primary" aria-hidden="true">check_circle</span>
+<span>Disponibilidad sincronizada con Google Calendar.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons mt-0.5 text-base text-accent" aria-hidden="true">priority_high</span>
+<span>Recomienda pedir nuevas reseñas para el espacio "Espacio Creativo".</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons mt-0.5 text-base text-accent" aria-hidden="true">auto_fix_high</span>
+<span>Activa la promoción de temporada alta para «Terraza del Sol».</span>
+</li>
+</ul>
+<a href="../contacto/code.html" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary transition hover:text-primary">
+<span class="material-icons text-base" aria-hidden="true">support</span>
+Solicitar optimización con un asesor
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-16 bg-secondary text-white">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<p class="text-sm text-white/70">¿Necesitas asistencia inmediata? Escríbenos por <a class="font-semibold text-primary hover:underline" href="../contacto/code.html">soporte</a>.</p>
+<div class="flex gap-4 text-sm text-white/70">
+<a class="transition hover:text-primary" href="../terminos/code.html">Términos</a>
+<a class="transition hover:text-primary" href="../privacidad/code.html">Privacidad</a>
+<a class="transition hover:text-primary" href="https://www.linkedin.com/company/geseven" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenuToggle?.addEventListener("click", () => {
+    const isHidden = mobileMenu?.classList.contains("hidden");
+    if (isHidden) {
+        mobileMenu?.classList.remove("hidden");
+        mobileMenuToggle.setAttribute("aria-expanded", "true");
+    } else {
+        mobileMenu?.classList.add("hidden");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+});
+
+mobileMenu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuToggle?.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
+</body>
+</html>

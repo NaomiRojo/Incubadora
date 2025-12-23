@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Geseven · Publicar un lugar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#D4AF37",
+                    secondary: "#003366",
+                    accent: "#F97316",
+                    'background-light': "#F7F2E7",
+                    'background-dark': "#001F3F",
+                    'text-light': "#1f2937",
+                    'text-dark': "#f3f4f6",
+                },
+                fontFamily: {
+                    display: ["Poppins", "sans-serif"],
+                },
+                borderRadius: {
+                    DEFAULT: "0.75rem",
+                },
+                boxShadow: {
+                    glow: "0 20px 45px rgba(0, 0, 0, 0.12)",
+                },
+            },
+        },
+    };
+</script>
+<style>
+    .material-icons {
+        font-size: inherit;
+        line-height: 1;
+    }
+</style>
+</head>
+<body class="bg-background-light font-display text-text-light">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-40 border-b border-primary/10 bg-white/90 backdrop-blur">
+<nav class="container mx-auto flex items-center justify-between gap-4 px-6 py-4">
+<a href="../untitled_screen/code.html#inicio" class="flex items-center gap-2 text-2xl font-bold text-primary">
+<span class="material-icons text-3xl" aria-hidden="true">celebration</span>
+<span>Geseven</span>
+</a>
+<div class="flex items-center gap-3 md:hidden">
+<a href="../login/register/code.html" class="rounded-md border border-primary/70 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary">Entrar</a>
+<button type="button" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex items-center justify-center rounded-md border border-primary/60 p-2 text-secondary transition hover:bg-primary/10">
+<span class="material-icons text-xl" aria-hidden="true">menu</span>
+<span class="sr-only">Abrir navegación</span>
+</button>
+</div>
+<div class="hidden items-center gap-8 md:flex">
+<ul class="flex items-center gap-6 text-sm font-medium text-secondary/80">
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a></li>
+<li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#faq">FAQ</a></li>
+</ul>
+<a href="../untitled_screen/code.html#servicios" class="rounded-md border border-primary/60 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-primary hover:text-primary">¿Cómo funciona?</a>
+<div class="relative">
+<button type="button" id="account-menu-toggle" aria-expanded="false" aria-controls="account-menu" class="flex items-center gap-1 text-sm font-semibold text-secondary transition-colors hover:text-primary">
+<span>Mi cuenta</span>
+<span class="material-icons text-base" aria-hidden="true">expand_more</span>
+</button>
+<div id="account-menu" class="absolute right-0 top-full z-30 mt-3 hidden w-56 rounded-xl border border-primary/10 bg-white p-2 text-sm shadow-lg ring-1 ring-black/5">
+<a class="block rounded-md px-4 py-2 text-secondary/80 transition hover:bg-primary/10 hover:text-secondary" href="../perfil_usuario/code.html">Mi perfil</a>
+<a class="block rounded-md px-4 py-2 text-secondary/80 transition hover:bg-primary/10 hover:text-secondary" href="../mis_reservas/code.html">Mis reservas</a>
+<a class="block rounded-md px-4 py-2 text-secondary/80 transition hover:bg-primary/10 hover:text-secondary" href="../lugares_publicados/code.html">Mis lugares</a>
+<a class="block rounded-md px-4 py-2 text-secondary/80 transition hover:bg-primary/10 hover:text-secondary" href="../historial_de_facturacion/code.html">Facturación</a>
+<a class="block rounded-md px-4 py-2 text-red-600 transition hover:bg-red-50" href="../login/register/code.html">Cerrar sesión</a>
+</div>
+</div>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden border-t border-primary/10 bg-white/95 px-6 py-4 text-sm font-medium text-secondary shadow-sm md:hidden">
+<nav class="flex flex-col gap-3">
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a>
+<a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#faq">FAQ</a>
+<a class="mt-2 rounded-md bg-primary px-4 py-2 text-center text-white transition hover:bg-primary/90" href="../untitled_screen/code.html#servicios">Ver cómo funciona</a>
+<div class="mt-2 border-t border-primary/10 pt-3">
+<a class="block py-2 transition-colors hover:text-primary" href="../login/register/code.html">Iniciar sesión / Registro</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../perfil_usuario/code.html">Mi perfil</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../mis_reservas/code.html">Mis reservas</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../lugares_publicados/code.html">Mis lugares</a>
+<a class="block py-2 transition-colors hover:text-primary" href="../historial_de_facturacion/code.html">Facturación</a>
+</div>
+</nav>
+</div>
+</header>
+<main class="flex-1 bg-gradient-to-b from-white via-background-light to-white">
+<section class="container mx-auto grid gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+<div class="space-y-6">
+<span class="inline-flex items-center rounded-full bg-primary/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-secondary/80">Comparte tu espacio</span>
+<h1 class="text-4xl font-bold leading-tight text-secondary lg:text-5xl">Publica tu lugar y recibe reservas verificadas en menos de 24 horas</h1>
+<p class="text-lg text-secondary/80">Geseven te acompaña con asesoría personalizada, difusión segmentada y herramientas de gestión para que solo te ocupes de brindar experiencias memorables.</p>
+<div class="grid gap-4 sm:grid-cols-2">
+<div class="rounded-2xl border border-primary/10 bg-white/90 p-5 shadow-sm">
+<p class="text-sm font-semibold text-primary">Difusión inteligente</p>
+<p class="mt-2 text-sm text-secondary/80">Promocionamos tu espacio en las categorías correctas y con anuncios destacados.</p>
+</div>
+<div class="rounded-2xl border border-primary/10 bg-white/90 p-5 shadow-sm">
+<p class="text-sm font-semibold text-primary">Protección en pagos</p>
+<p class="mt-2 text-sm text-secondary/80">Define condiciones claras y cobra con garantías respaldadas por nuestra plataforma.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<a href="#formulario" class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary/90">
+<span class="material-icons text-base" aria-hidden="true">assignment</span>
+Completar formulario
+</a>
+<a href="../sobre_nosotros/code.html" class="inline-flex items-center gap-2 rounded-md border border-secondary/40 px-5 py-3 text-sm font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+<span class="material-icons text-base" aria-hidden="true">play_circle</span>
+Ver guía de publicación
+</a>
+</div>
+<div class="flex gap-6 rounded-2xl border border-primary/20 bg-white/70 p-6 shadow-sm backdrop-blur">
+<div>
+<p class="text-3xl font-bold text-secondary">+180</p>
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Espacios nuevos/mes</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-secondary">95%</p>
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Reservas exitosas</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-secondary">48h</p>
+<p class="text-xs uppercase tracking-[0.3em] text-secondary/60">Tiempo medio de respuesta</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-3xl bg-white p-6 shadow-glow">
+<h2 class="text-xl font-semibold text-secondary">Pasos para destacar tu lugar</h2>
+<ol class="mt-6 space-y-5 text-sm text-secondary/80">
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-secondary">1</span>
+<span>Completa la información esencial: datos del lugar, capacidad y contacto.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-secondary">2</span>
+<span>Personaliza tu ficha con fotos profesionales y servicios diferenciales.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-secondary">3</span>
+<span>Publica y recibe solicitudes verificadas con pagos protegidos por Geseven.</span>
+</li>
+</ol>
+<div class="mt-6 rounded-2xl bg-secondary/95 px-5 py-4 text-sm text-white">
+<p class="font-semibold">¿Necesitas ayuda con la preparación?</p>
+<p class="text-white/80">Reserva una sesión gratuita con nuestro equipo y estructura tu ficha en vivo.</p>
+<a href="../contacto/code.html" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+<span class="material-icons text-base" aria-hidden="true">support_agent</span>
+Agendar asesoría
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="formulario" class="bg-white py-16">
+<div class="container mx-auto grid gap-10 px-6 lg:grid-cols-[1fr_0.8fr]">
+<div class="space-y-6">
+<h2 class="text-3xl font-semibold text-secondary">Ficha de publicación</h2>
+<p class="text-secondary/70">Completa los campos para que podamos validar y destacar tu espacio. Puedes guardar avances y continuarlos luego desde tu panel.</p>
+<div class="rounded-3xl border border-primary/10 bg-background-light p-6 shadow-sm">
+<form id="listing-form" action="../lugares_publicados/code.html" method="get" class="space-y-8">
+<div class="grid gap-5 md:grid-cols-2">
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Nombre comercial del espacio</span>
+<input required name="nombre" type="text" placeholder="Ej. Salón Imperial, Jardín Azul..." class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Categoría principal</span>
+<select required name="categoria" class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30">
+<option value="" disabled selected>Selecciona una opción</option>
+<option>Salones de lujo</option>
+<option>Jardines para bodas</option>
+<option>Espacios corporativos</option>
+<option>Opciones económicas</option>
+<option>Otros</option>
+</select>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Ciudad / Provincia</span>
+<input required name="ubicacion" type="text" placeholder="Ej. Buenos Aires, Córdoba..." class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Capacidad máxima</span>
+<input required name="capacidad" type="number" min="1" placeholder="Número de personas" class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</label>
+</div>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Descripción</span>
+<textarea required name="descripcion" rows="4" placeholder="Cuenta qué hace especial a tu lugar, servicios incluidos, restricciones..." class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"></textarea>
+</label>
+<div class="grid gap-5 md:grid-cols-2">
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Precio base</span>
+<input required name="precio" type="text" placeholder="Ej. $1500 por evento" class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Modalidad de cobro</span>
+<select name="modalidad" class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30">
+<option>Por hora</option>
+<option>Por evento</option>
+<option>Por día</option>
+<option>Custom</option>
+</select>
+</label>
+</div>
+<label class="block">
+<span class="text-sm font-semibold text-secondary">Servicios adicionales</span>
+<textarea name="servicios" rows="3" placeholder="Catering, ambientación, sonido, estacionamiento..." class="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-secondary shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"></textarea>
+</label>
+<div class="rounded-2xl border border-dashed border-primary/40 bg-white px-6 py-8 text-center">
+<span class="material-icons mx-auto mb-3 text-3xl text-primary" aria-hidden="true">images</span>
+<p class="text-sm font-semibold text-secondary">Galería fotográfica</p>
+<p class="mt-1 text-sm text-secondary/70">Arrastra o selecciona al menos 3 imágenes en formato JPG o PNG.</p>
+<button type="button" class="mt-4 inline-flex items-center gap-2 rounded-md border border-primary/60 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-primary hover:text-primary">
+<span class="material-icons text-base" aria-hidden="true">file_upload</span>
+Subir imágenes
+</button>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<a href="../detalles_del_lugar/code.html" class="inline-flex items-center gap-2 text-sm font-semibold text-secondary transition hover:text-primary">
+<span class="material-icons text-base" aria-hidden="true">visibility</span>
+Previsualizar ejemplo
+</a>
+<div class="flex gap-3">
+<button type="submit" class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary/90">
+<span class="material-icons text-base" aria-hidden="true">rocket_launch</span>
+Publicar lugar
+</button>
+<button type="button" class="inline-flex items-center gap-2 rounded-md border border-secondary/40 px-5 py-3 text-sm font-semibold text-secondary transition hover:border-secondary hover:text-primary" onclick="window.location.href='../perfil_usuario/code.html';">
+<span class="material-icons text-base" aria-hidden="true">save</span>
+Guardar borrador
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="space-y-6">
+<div class="rounded-3xl border border-primary/15 bg-white p-6 shadow-sm">
+<h3 class="text-lg font-semibold text-secondary">Documentación recomendada</h3>
+<ul class="mt-4 space-y-3 text-sm text-secondary/80">
+<li class="flex items-center gap-3">
+<span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>
+<span>Planos o layout del espacio para dimensionar montaje.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>
+<span>Certificados de seguridad, habilitaciones o seguros vigentes.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-icons text-base text-primary" aria-hidden="true">check_circle</span>
+<span>Listado de proveedores aliados y condiciones de uso.</span>
+</li>
+</ul>
+</div>
+<div class="rounded-3xl border border-accent/20 bg-accent/10 p-6 shadow-sm">
+<h3 class="text-lg font-semibold text-secondary">Beneficios al publicar</h3>
+<ul class="mt-4 space-y-3 text-sm text-secondary/80">
+<li>Visibilidad destacada en búsquedas por ciudad, capacidad y estilo.</li>
+<li>Acceso a dashboard con métricas en tiempo real y gestión de leads.</li>
+<li>Soporte 24/7 y equipo de producción disponible para eventos corporativos.</li>
+</ul>
+<a href="../contacto/code.html" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-secondary transition hover:text-primary">
+<span class="material-icons text-base" aria-hidden="true">forum</span>
+Solicitar acompañamiento</a>
+</div>
+<div class="rounded-3xl border border-primary/15 bg-white p-6 shadow-sm">
+<h3 class="text-lg font-semibold text-secondary">Preguntas frecuentes</h3>
+<ul class="mt-4 space-y-4 text-sm text-secondary/80">
+<li>
+<strong>¿Cuánto demora la revisión?</strong>
+<p class="mt-1">Trabajamos con un SLA de 12 a 24 horas hábiles. Te notificamos por correo apenas la ficha esté publicada.</p>
+</li>
+<li>
+<strong>¿Puedo editar después?</strong>
+<p class="mt-1">Sí, desde tu panel de "Mis lugares" puedes actualizar precios, fotos y disponibilidad en cualquier momento.</p>
+</li>
+<li>
+<strong>¿Qué costo tiene?</strong>
+<p class="mt-1">Publicar es gratuito. Solo aplicamos una comisión al concretar la reserva, sin costos ocultos.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-secondary text-white">
+<div class="container mx-auto px-6 py-12">
+<div class="grid gap-10 md:grid-cols-4">
+<div class="space-y-3">
+<a href="../untitled_screen/code.html#inicio" class="text-2xl font-bold text-primary">Geseven</a>
+<p class="text-sm text-white/70">Conectamos venues excepcionales con personas y marcas que buscan experiencias inolvidables.</p>
+<p class="text-sm text-white/60">¿Necesitas ayuda? <a class="font-semibold text-primary hover:underline" href="../contacto/code.html">Escríbenos</a></p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Accesos rápidos</h3>
+<ul class="mt-4 space-y-2 text-sm text-white/70">
+<li><a class="transition hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a></li>
+<li><a class="transition hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a></li>
+<li><a class="transition hover:text-primary" href="../sobre_nosotros/code.html">Sobre nosotros</a></li>
+<li><a class="transition hover:text-primary" href="../contacto/code.html">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Soporte</h3>
+<ul class="mt-4 space-y-2 text-sm text-white/70">
+<li><a class="transition hover:text-primary" href="../untitled_screen/code.html#faq">Centro de ayuda</a></li>
+<li><a class="transition hover:text-primary" href="../terminos/code.html">Términos y condiciones</a></li>
+<li><a class="transition hover:text-primary" href="../privacidad/code.html">Privacidad</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Sigue la conversación</h3>
+<p class="mt-4 text-sm text-white/70">Ideas, montajes y tendencias en nuestras redes.</p>
+<div class="mt-4 flex gap-4">
+<a class="transition hover:text-primary" href="https://www.instagram.com/geseven" target="_blank" rel="noopener">Instagram</a>
+<a class="transition hover:text-primary" href="https://www.linkedin.com/company/geseven" target="_blank" rel="noopener">LinkedIn</a>
+<a class="transition hover:text-primary" href="https://www.twitter.com/geseven" target="_blank" rel="noopener">Twitter</a>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/60">&copy; 2024 Geseven. Todos los derechos reservados.</div>
+</div>
+</footer>
+</div>
+<script>
+const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const accountMenuToggle = document.getElementById("account-menu-toggle");
+const accountMenu = document.getElementById("account-menu");
+
+mobileMenuToggle?.addEventListener("click", () => {
+    const isHidden = mobileMenu?.classList.contains("hidden");
+    if (isHidden) {
+        mobileMenu?.classList.remove("hidden");
+        mobileMenuToggle.setAttribute("aria-expanded", "true");
+    } else {
+        mobileMenu?.classList.add("hidden");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+});
+
+mobileMenu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuToggle?.setAttribute("aria-expanded", "false");
+    });
+});
+
+function closeAccountMenu() {
+    if (!accountMenu || accountMenu.classList.contains("hidden")) return;
+    accountMenu.classList.add("hidden");
+    accountMenuToggle?.setAttribute("aria-expanded", "false");
+}
+
+accountMenuToggle?.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+    const isHidden = accountMenu?.classList.contains("hidden");
+    if (isHidden) {
+        accountMenu?.classList.remove("hidden");
+        accountMenuToggle.setAttribute("aria-expanded", "true");
+    } else {
+        closeAccountMenu();
+    }
+});
+
+accountMenu?.addEventListener("click", event => {
+    event.stopPropagation();
+});
+
+document.addEventListener("click", () => {
+    closeAccountMenu();
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeAccountMenu();
+    }
+});
+</script>
+</body>
+</html>

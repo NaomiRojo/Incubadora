@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geseven · Editar perfil</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+  <!-- Fuentes e íconos -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#D4AF37",
+            secondary: "#003366",
+            accent: "#F97316",
+            'background-light': "#F7F2E7",
+            'background-dark': "#001F3F",
+            'text-light': "#1f2937",
+            'text-dark': "#f3f4f6",
+          },
+          fontFamily: {
+            display: ["Poppins", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.75rem",
+          },
+          boxShadow: {
+            glow: "0 20px 45px rgba(0, 0, 0, 0.12)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-icons {
+      font-size: inherit;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background-light font-display text-text-light">
+<div class="flex min-h-screen flex-col">
+
+  <!-- HEADER (mismo que en Mi perfil, puedes copiar/pegar el tuyo) -->
+  <header class="sticky top-0 z-40 border-b border-primary/10 bg-white/90 backdrop-blur">
+    <nav class="container mx-auto flex items-center justify-between gap-4 px-6 py-4">
+      <a href="../untitled_screen/code.html#inicio"
+         class="flex items-center gap-2 text-2xl font-bold text-primary">
+        <span class="material-icons text-3xl" aria-hidden="true">celebration</span>
+        <span>Geseven</span>
+      </a>
+
+      <!-- Móvil -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="../publicar_un_lugar/code.html"
+           class="rounded-md border border-primary/70 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary">
+          Publicar
+        </a>
+        <button type="button" id="mobile-menu-toggle"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                class="inline-flex items-center justify-center rounded-md border border-primary/60 p-2 text-secondary transition hover:bg-primary/10">
+          <span class="material-icons text-xl" aria-hidden="true">menu</span>
+          <span class="sr-only">Abrir navegación</span>
+        </button>
+      </div>
+
+      <!-- Desktop -->
+      <div class="hidden items-center gap-8 md:flex">
+        <ul class="flex items-center gap-6 text-sm font-medium text-secondary/80">
+          <li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a></li>
+          <li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a></li>
+          <li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a></li>
+          <li><a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a></li>
+          <li><a class="transition-colors hover:text-primary" href="../publicar_un_lugar/code.html">Publicar un lugar</a></li>
+        </ul>
+        <a href="../contacto/code.html"
+           class="rounded-md border border-primary/60 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-primary hover:text-primary">
+          Soporte
+        </a>
+      </div>
+    </nav>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu"
+         class="hidden border-t border-primary/10 bg-white/95 px-6 py-4 text-sm font-medium text-secondary shadow-sm md:hidden">
+      <nav class="flex flex-col gap-3">
+        <a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#inicio">Inicio</a>
+        <a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#buscador">Buscar espacios</a>
+        <a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#categorias">Categorías</a>
+        <a class="transition-colors hover:text-primary" href="../untitled_screen/code.html#servicios">Servicios</a>
+        <a class="transition-colors hover:text-primary" href="../publicar_un_lugar/code.html">Publicar un lugar</a>
+        <a class="rounded-md border border-primary/60 px-4 py-2 text-center text-secondary transition hover:border-primary hover:text-primary"
+           href="../contacto/code.html">
+          Contactar soporte
+        </a>
+        <div class="mt-2 border-t border-primary/10 pt-3">
+          <a class="block py-2 transition-colors hover:text-primary" href="../mis_reservas/code.html">Mis reservas</a>
+          <a class="block py-2 transition-colors hover:text-primary" href="../lugares_publicados/code.html">Mis lugares</a>
+          <a class="block py-2 transition-colors hover:text-primary" href="../historial_de_facturacion/code.html">Facturación</a>
+          <a class="block py-2 transition-colors hover:text-primary" href="../login/register/code.html">Cerrar sesión</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container mx-auto flex-1 px-6 py-10">
+    <!-- Migas / título -->
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-secondary/50">Perfil</p>
+        <h1 class="mt-1 text-2xl font-semibold text-secondary">Editar perfil</h1>
+        <p class="text-sm text-secondary/70">
+          Actualiza tu información pública, datos de contacto y preferencias de notificación.
+        </p>
+      </div>
+
+      <a href="../mi_perfil/code.html"
+         class="inline-flex items-center gap-2 text-sm font-semibold text-secondary transition hover:text-primary">
+        <span class="material-icons text-base" aria-hidden="true">arrow_back</span>
+        Volver a mi perfil
+      </a>
+    </div>
+
+    <!-- Formulario -->
+    <form class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]" action="#" method="post">
+      <!-- Columna izquierda: información principal -->
+      <section class="space-y-6">
+        <!-- Tarjeta: datos básicos -->
+        <div class="rounded-3xl border border-primary/10 bg-white/95 p-6 shadow-glow">
+          <h2 class="text-lg font-semibold text-secondary mb-4">Información básica</h2>
+
+          <div class="flex flex-col gap-4 md:flex-row md:items-center">
+            <!-- Avatar / iniciales -->
+            <div class="flex flex-col items-center gap-3">
+              <div
+                class="flex h-20 w-20 items-center justify-center rounded-3xl border-4 border-primary/40 bg-gradient-to-br from-primary/70 to-secondary/80 text-3xl font-bold text-white shadow-lg shadow-black/15">
+                LC
+              </div>
+              <button type="button"
+                      class="text-xs font-semibold text-secondary underline-offset-2 hover:text-primary hover:underline">
+                Cambiar foto
+              </button>
+              <p class="text-[11px] text-secondary/60 text-center max-w-[10rem]">
+                (Solo diseño, aún sin funcionalidad de subida)
+              </p>
+            </div>
+
+            <!-- Campos de texto -->
+            <div class="flex-1 space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-secondary mb-1" for="nombre">
+                  Nombre completo
+                </label>
+                <input id="nombre" name="nombre" type="text"
+                       class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                       placeholder="Ej. Lucía Cabrera" value="Lucía Cabrera">
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-secondary mb-1" for="rol">
+                  Rol o titular de perfil
+                </label>
+                <input id="rol" name="rol" type="text"
+                       class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                       placeholder="Ej. Productora de eventos" value="Productora de eventos">
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="block text-sm font-medium text-secondary mb-1" for="ciudad">
+                    Ciudad
+                  </label>
+                  <input id="ciudad" name="ciudad" type="text"
+                         class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                         placeholder="Ej. Buenos Aires" value="Buenos Aires">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-secondary mb-1" for="pais">
+                    País
+                  </label>
+                  <input id="pais" name="pais" type="text"
+                         class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                         placeholder="Ej. Argentina" value="Argentina">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta: descripción pública -->
+        <div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <h2 class="text-lg font-semibold text-secondary">Descripción pública</h2>
+            <p class="text-xs text-secondary/60">Lo verán los clientes en tu perfil.</p>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block text-sm font-medium text-secondary mb-1" for="descripcion">
+              Sobre ti
+            </label>
+            <textarea id="descripcion" name="descripcion" rows="4"
+                      class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                      placeholder="Cuenta brevemente qué tipo de eventos organizas, tu experiencia, etc."></textarea>
+
+            <p class="text-xs text-secondary/60">
+              Ejemplo: “Ayudo a organizar conferencias, bodas y lanzamientos corporativos, priorizando la experiencia
+              de los asistentes y la coordinación con los proveedores.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta: datos de contacto -->
+        <div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+          <h2 class="text-lg font-semibold text-secondary mb-4">Datos de contacto</h2>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-secondary mb-1" for="email">
+                Correo principal
+              </label>
+              <input id="email" name="email" type="email"
+                     class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                     placeholder="tucorreo@ejemplo.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-secondary mb-1" for="telefono">
+                WhatsApp / Teléfono
+              </label>
+              <input id="telefono" name="telefono" type="tel"
+                     class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                     placeholder="+54 9 11 0000 0000">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-secondary mb-1" for="web">
+                Sitio web o red social
+              </label>
+              <input id="web" name="web" type="url"
+                     class="block w-full rounded-lg border border-secondary/20 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-primary"
+                     placeholder="https://instagram.com/tu_marca">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Columna derecha: preferencias, verificación (resumen) -->
+      <aside class="space-y-6">
+        <!-- Preferencias de notificación -->
+        <div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <h2 class="text-lg font-semibold text-secondary">Preferencias de notificación</h2>
+          </div>
+
+          <div class="space-y-4 text-sm text-secondary/80">
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1 rounded border-secondary/30 text-primary focus:ring-primary" checked>
+              <span>
+                <span class="font-medium">Confirmaciones de reserva</span><br>
+                <span class="text-secondary/70">Recibe un resumen cuando tu espacio sea reservado.</span>
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1 rounded border-secondary/30 text-primary focus:ring-primary" checked>
+              <span>
+                <span class="font-medium">Alertas de pagos</span><br>
+                <span class="text-secondary/70">Avisos cuando haya pagos acreditados o pendientes.</span>
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1 rounded border-secondary/30 text-primary focus:ring-primary">
+              <span>
+                <span class="font-medium">Recomendaciones de demanda</span><br>
+                <span class="text-secondary/70">Sugerencias para ajustar precios o activar promociones.</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Estado de verificación (solo visual) -->
+        <div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+          <h2 class="text-lg font-semibold text-secondary mb-4">Estado de verificación</h2>
+
+          <ul class="space-y-3 text-sm text-secondary/80">
+            <li class="flex items-center justify-between gap-3">
+              <span>Identidad validada con DNI</span>
+              <span
+                class="inline-flex items-center gap-1 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+                <span class="material-icons text-sm" aria-hidden="true">verified</span>
+                Vigente
+              </span>
+            </li>
+            <li class="flex items-center justify-between gap-3">
+              <span>Contrato de servicio Geseven</span>
+              <a href="../historial_de_facturacion/code.html"
+                 class="text-xs font-semibold text-secondary transition hover:text-primary">
+                Ver detalle
+              </a>
+            </li>
+            <li class="flex items-center justify-between gap-3">
+              <span>Póliza de responsabilidad civil</span>
+              <button type="button"
+                      class="text-xs font-semibold text-secondary transition hover:text-primary">
+                Adjuntar nuevo
+              </button>
+            </li>
+          </ul>
+
+          <p class="mt-4 text-xs text-secondary/60">
+            Algunas verificaciones solo se pueden modificar a través de soporte.
+          </p>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="rounded-3xl border border-primary/10 bg-white p-6 shadow-sm">
+          <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <a href="../mi_perfil/code.html"
+               class="inline-flex items-center justify-center rounded-md border border-secondary/30 px-4 py-2 text-sm font-semibold text-secondary transition hover:border-secondary hover:text-primary">
+              Cancelar
+            </a>
+            <button type="submit"
+                    class="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary/90">
+              <span class="material-icons text-sm mr-1" aria-hidden="true">save</span>
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </aside>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-secondary text-white">
+    <div class="container mx-auto px-6 py-8">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <p class="text-sm text-white/70">
+          ¿Necesitas asistencia inmediata? Escríbenos por
+          <a class="font-semibold text-primary hover:underline" href="../contacto/code.html">soporte</a>.
+        </p>
+        <div class="flex gap-4 text-sm text-white/70">
+          <a class="transition hover:text-primary" href="../terminos/code.html">Términos</a>
+          <a class="transition hover:text-primary" href="../privacidad/code.html">Privacidad</a>
+          <a class="transition hover:text-primary"
+             href="https://www.linkedin.com/company/geseven"
+             target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuToggle?.addEventListener("click", () => {
+    const isHidden = mobileMenu?.classList.contains("hidden");
+    if (isHidden) {
+      mobileMenu?.classList.remove("hidden");
+      mobileMenuToggle.setAttribute("aria-expanded", "true");
+    } else {
+      mobileMenu?.classList.add("hidden");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenuToggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+</body>
+</html>
